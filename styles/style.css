@@ -70,20 +70,12 @@ ol {
   width: 711px;
   height: 386px;
   margin-top: 78px;
-  margin-bottom: 40px;
+  margin-bottom: 23px;
   display: flex;
   flex-direction: column; 
   object-fit: contain;
 }
 
-
-/*Найти*/
-.search-form {
-  display: flex;                 
-  flex-direction: row;           
-  align-items: flex-start;
-  justify-content: space-between;
-}
 
 /*секция для списка карточек + span Посмотри в окно*/
 .content__details {
@@ -108,7 +100,6 @@ ol {
   display: flex;
   flex-direction: column;
   row-gap: 30px;
-  
 }
 
 /*article*/
@@ -132,16 +123,7 @@ ol {
   object-position: right center;
 }
 
-/*Время суток*/
-.search-form__fieldset-title {
-  font-family: 'Fira Sans Condensed', sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 18px;
-  line-height: 100%;
-  letter-spacing: 0%;
-}
-
+/*h1 class="title" стр 73*/
 .title {
   font-family: 'Oswald', sans-serif;
   font-weight: 700;
@@ -193,6 +175,8 @@ ol {
   line-clamp: 1;
 }
 
+
+/*class в Input взято из задания*/
 .visually-hidden {
   position: absolute;
   inline-size: 1px;
@@ -202,3 +186,133 @@ ol {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+
+/*Найти вся форма*/
+.search-form {
+  display: flex;                   
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+/*"Время суток"*/
+.search-form__fieldset-title {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+
+/*Обертка Утро-день-ночь*/
+.search-form__checkbox-list {
+  width: fit-content;
+  display: flex;
+  gap: 20px;
+ 
+}
+
+.search-form__fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+/*Например*/
+.search-form__label {
+  display: flex;
+  align-items: center;
+}
+
+/*"Например ..."*/
+.search-form__textfield {
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 100%;
+  color: #FFFFFFB2; 
+  border: 1px solid #FFFFFF;
+  border-left: none;
+  border-right: none;
+  background-color: transparent;
+  appearance: none;
+  outline: none; 
+  padding: 0;
+  width: 225px;
+  height: 27px;
+}
+
+
+/*placeholder */
+.search-form__textfield::placeholder {
+  color: rgb(255 255 255 / 0.7);
+}
+
+
+/* cтиль при фокусе*/
+.search-form__textfield:focus {
+  color: #fff;
+  outline: 1px solid #fff;
+}
+
+
+/*input в фокусе -убираем границу*/
+.search-form__label:has(:focus) {
+  border-color: transparent; 
+}
+
+/*границa y лейблa */
+.search-form__label:has(:focus-visible) {
+  border: 1px solid #fff;
+  outline: #FFFFFF; 
+}
+
+/*квадраты выбора*/
+.search-form__pseudo-checkbox {
+  border: 1px solid #fff;
+  width: 19px;
+  height: 19px;
+  padding: 1px;
+  box-sizing: border-box;
+  display: inline-block; 
+  cursor: pointer;
+  position: relative;
+  margin-right: 7px;
+}
+
+/*белый квадрат*/
+.search-form__pseudo-checkbox::after {
+  content: "";
+  display: block;
+  background-color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  box-sizing: border-box;
+}
+
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  opacity: 1;
+}
+
+.search-form__label:hover .search-form__label-text{
+  text-decoration: underline;
+  text-decoration-skip-ink: none; /*опустить подчёркивание*/
+  cursor: pointer;
+}
+
+/* цвет и стиль рамки при фокусе */  
+.search-form__checkbox:focus {
+  outline: 1px solid #FFFFFF;       
+}
+
+/*добавляет границу квадрат+время*/
+.search-form__checkbox:focus {
+  outline: 1px solid #FFFFFF;
+  outline-offset: 2px;
+}
+
+
